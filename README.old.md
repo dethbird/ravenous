@@ -1,2 +1,0 @@
-# ravenous
-codecademy ravenous project
