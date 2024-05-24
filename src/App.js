@@ -4,6 +4,21 @@ import BusinessList from './BusinessList';
 import SearchBar from './SearchBar';
 
 
+const businesses = [
+  {
+    name: 'Buniness 1',
+    img: 'whatever',
+  },
+  {
+    name: 'Buniness 2',
+    img: 'whatever',
+  },
+  {
+    name: 'Buniness 3',
+    img: 'whatever',
+  }
+];
+
 function App() {
   return (
     <div className="container">
@@ -11,7 +26,7 @@ function App() {
         <h1>Ravenous</h1>
       </header>
       <div><SearchBar /></div>
-      <div><BusinessList /></div>
+      <div><BusinessList businesses={businesses} /></div>
     </div>
   );
 }

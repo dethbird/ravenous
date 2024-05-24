@@ -3,11 +3,12 @@ Each Business component should display an image, name, address, city, state, zip
 */
 import React from 'react';
 
-function Business() {
+function Business(props) {
+    const { business } = props;
     return (
         <div>
             <img src="" alt=""/>
-            <div>Business Name</div>
+            <div>{business.name}</div>
             <div>123 Fake St</div>
             <div>Fakeville</div>
             <div>OH</div>
