@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./SearchBar.module.css";
 
 const sortByOptions = {
@@ -8,10 +8,27 @@ const sortByOptions = {
 };
 
 const SearchBar = () => {
+
+  const [searchTerm, setSearchTerm] = useState('');
+  const [location, setLocation] = useState('');
+  const [sortOption, setSortOption] = useState('');
+
+  const handleChangeSearchTerm = (e) => {
+    setSearchTerm(() => e.target.value);
+  }
+
+  const handleChangeLocation = (e) => {
+    setLocation(() => e.target.value);
+  }
+
+  const handleSelectSortOption = (option) => {
+    setSortOption(() => option);
+  }
+
   const renderSortByOptions = () => {
     return Object.keys(sortByOptions).map((sortByOption) => {
       let sortByOptionValue = sortByOptions[sortByOption];
-      return <li key={sortByOptionValue}>{sortByOption}</li>;
+      return <li key={sortByOptionValue} onClick={()=>{handleSelectSortOption(sortByOptionValue)}}>{sortByOption}</li>;
     });
   };
 
@@ -21,8 +38,8 @@ const SearchBar = () => {
         <ul>{renderSortByOptions()}</ul>
       </div>
       <div className={styles.SearchBarFields}>
-        <input placeholder="Search Businesses" />
-        <input placeholder="Where?" />
+        <input placeholder="Search Businesses" value={searchTerm} onChange={handleChangeSearchTerm} />
+        <input placeholder="Where?" value={location} onChange={handleChangeLocation} />
       </div>
       <div className={styles.SearchBarSubmit}>
         <a>Let's Go</a>
