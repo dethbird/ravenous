@@ -1,5 +1,5 @@
 const yelpBaseUrl = 'https://api.yelp.com/v3';
-const apiKey = "d9XldaN1VGT29qPYcWxuKBrU_eawnBEHPR7808B0eRNJyLyASfxeUcjjJAT4BULya6kNg47PHm37VZ9YyuhlwcJNP_A8Q-A5lKo8KTvnYEYmPcdH5cSBzQFAX-1VZnYx";
+const apiKey = "";
 export const searchBusinesses = async (searchTerm, location, sortBy) => {
     const businessEndpoint = '/businesses/search';
     const queryParams = [];
