@@ -1,11 +1,6 @@
 import React, { useState } from "react";
 import styles from "./SearchBar.module.css";
 
-// import { searchBusinesses } from '../../utils/yelp';
-// const res = searchBusinesses('pizza','cincinnati, oh','best_match');
-// console.log(res);
-
-
 const sortByOptions = {
   "Best Match": "best_match",
   "Highest Rated": "rating",
